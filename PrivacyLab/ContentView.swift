@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var notificationManager = NotificationManager()
     var body: some View {
         TabView {
             Text("Map / Location")

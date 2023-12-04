@@ -11,6 +11,7 @@
 		74A9BF622B1E2DEA00A24A53 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A9BF612B1E2DEA00A24A53 /* ContentView.swift */; };
 		74A9BF642B1E2DEB00A24A53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74A9BF632B1E2DEB00A24A53 /* Assets.xcassets */; };
 		74A9BF672B1E2DEB00A24A53 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74A9BF662B1E2DEB00A24A53 /* Preview Assets.xcassets */; };
+		74A9BF6E2B1E2F0700A24A53 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A9BF6D2B1E2F0700A24A53 /* NotificationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		74A9BF612B1E2DEA00A24A53 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		74A9BF632B1E2DEB00A24A53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74A9BF662B1E2DEB00A24A53 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		74A9BF6D2B1E2F0700A24A53 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				74A9BF5F2B1E2DEA00A24A53 /* PrivacyLabApp.swift */,
+				74A9BF6D2B1E2F0700A24A53 /* NotificationManager.swift */,
 				74A9BF612B1E2DEA00A24A53 /* ContentView.swift */,
 				74A9BF632B1E2DEB00A24A53 /* Assets.xcassets */,
 				74A9BF652B1E2DEB00A24A53 /* Preview Content */,
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74A9BF6E2B1E2F0700A24A53 /* NotificationManager.swift in Sources */,
 				74A9BF622B1E2DEA00A24A53 /* ContentView.swift in Sources */,
 				74A9BF602B1E2DEA00A24A53 /* PrivacyLabApp.swift in Sources */,
 			);
