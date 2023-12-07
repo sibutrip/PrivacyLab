@@ -13,6 +13,8 @@ import SwiftUI
 /// every view has a protected resources associated with it.
 /// all of those views have a shared notifications thing with it??? maybe??
 ///
+///
+///for all of them, provide a better plist description
 
 /// Enact user privacy protections.
 ///

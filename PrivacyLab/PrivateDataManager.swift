@@ -67,4 +67,7 @@ class PrivateDataManager: NSObject, ObservableObject, CLLocationManagerDelegate 
     
     // MARK: - Health
     
+    // get permission for health data. (use x method)
+    // display the data
+    // give them instructions on what to do if they havent given permission
 }
