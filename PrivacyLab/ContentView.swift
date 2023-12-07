@@ -13,6 +13,10 @@ import SwiftUI
 /// every view has a protected resources associated with it.
 /// all of those views have a shared notifications thing with it??? maybe??
 ///
+
+/// Enact user privacy protections.
+///
+
 struct ContentView: View {
     @StateObject var notificationManager = NotificationManager()
     var body: some View {

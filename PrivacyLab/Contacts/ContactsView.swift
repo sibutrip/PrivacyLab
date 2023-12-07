@@ -7,6 +7,12 @@
 
 import SwiftUI
 
+
+/// 1. if you dont give permissions, the app should still be usable
+/// make a popup that says "to view contacts enable permissions in settings" with the options "no thanks" and "take me there"
+///
+/// 2. make a toolbar button to add a contact using the ContactsManager method `addContact`
+
 struct ContactsView: View {
     @State var errorText: String?
     var showingError: Binding<Bool> {
@@ -23,6 +29,7 @@ struct ContactsView: View {
         List(contactsManager.contacts) { contact in
             HStack(spacing: 0) {
                 Text(contact.givenName)
+                Text(" ")
                 Text(contact.familyName)
             }
         }

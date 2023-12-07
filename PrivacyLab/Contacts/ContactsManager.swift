@@ -15,4 +15,10 @@ class ContactsManager: ObservableObject {
         let contacts = try await contactService.loadContacts()
         self.contacts = contacts
     }
+    
+    func addContact(givenName: String, familyName: String) async throws {
+        let addedContact = Contact(givenName: givenName, familyName: familyName)
+        try await contactService.add(addedContact)
+        contacts.append(addedContact)
+    }
 }
