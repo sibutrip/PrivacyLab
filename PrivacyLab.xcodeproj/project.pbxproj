@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7487064F2B2226790050D9A7 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7487064E2B2226790050D9A7 /* MapView.swift */; };
+		748706512B2226840050D9A7 /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748706502B2226840050D9A7 /* ContactsView.swift */; };
+		748706532B22268B0050D9A7 /* HealthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748706522B22268B0050D9A7 /* HealthView.swift */; };
 		74A9BF602B1E2DEA00A24A53 /* PrivacyLabApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A9BF5F2B1E2DEA00A24A53 /* PrivacyLabApp.swift */; };
 		74A9BF622B1E2DEA00A24A53 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A9BF612B1E2DEA00A24A53 /* ContentView.swift */; };
 		74A9BF642B1E2DEB00A24A53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74A9BF632B1E2DEB00A24A53 /* Assets.xcassets */; };
@@ -15,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7487064E2B2226790050D9A7 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		748706502B2226840050D9A7 /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
+		748706522B22268B0050D9A7 /* HealthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthView.swift; sourceTree = "<group>"; };
 		74A9BF5C2B1E2DEA00A24A53 /* PrivacyLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrivacyLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74A9BF5F2B1E2DEA00A24A53 /* PrivacyLabApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyLabApp.swift; sourceTree = "<group>"; };
 		74A9BF612B1E2DEA00A24A53 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,8 +60,11 @@
 			isa = PBXGroup;
 			children = (
 				74A9BF5F2B1E2DEA00A24A53 /* PrivacyLabApp.swift */,
-				74A9BF6D2B1E2F0700A24A53 /* NotificationManager.swift */,
 				74A9BF612B1E2DEA00A24A53 /* ContentView.swift */,
+				748706502B2226840050D9A7 /* ContactsView.swift */,
+				748706522B22268B0050D9A7 /* HealthView.swift */,
+				7487064E2B2226790050D9A7 /* MapView.swift */,
+				74A9BF6D2B1E2F0700A24A53 /* NotificationManager.swift */,
 				74A9BF632B1E2DEB00A24A53 /* Assets.xcassets */,
 				74A9BF652B1E2DEB00A24A53 /* Preview Content */,
 			);
@@ -140,8 +149,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				748706532B22268B0050D9A7 /* HealthView.swift in Sources */,
 				74A9BF6E2B1E2F0700A24A53 /* NotificationManager.swift in Sources */,
+				7487064F2B2226790050D9A7 /* MapView.swift in Sources */,
 				74A9BF622B1E2DEA00A24A53 /* ContentView.swift in Sources */,
+				748706512B2226840050D9A7 /* ContactsView.swift in Sources */,
 				74A9BF602B1E2DEA00A24A53 /* PrivacyLabApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

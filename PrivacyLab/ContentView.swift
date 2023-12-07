@@ -7,15 +7,21 @@
 
 import SwiftUI
 
+
+/// three views:
+/// map, contacts, health
+/// every view has a protected resources associated with it.
+/// all of those views have a shared notifications thing with it??? maybe??
+///
 struct ContentView: View {
     @StateObject var notificationManager = NotificationManager()
     var body: some View {
         TabView {
-            Text("Map / Location")
+            MapView()
                 .tabItem { Label("Map", systemImage: "map") }
-            Text("Contacts")
+            ContactsView()
                 .tabItem { Label("Contacts", systemImage: "person.3") }
-            Text("Health")
+            HealthView()
                 .tabItem { Label("Health", systemImage: "cross") }
         }
     }
