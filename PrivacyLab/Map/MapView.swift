@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MapView: View {
+    @StateObject var mapManager = MapManager()
     var body: some View {
         Text("Hello, World!")
     }
