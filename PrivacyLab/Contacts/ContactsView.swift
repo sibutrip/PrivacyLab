@@ -24,9 +24,10 @@ struct ContactsView: View {
             }
         }
     }
-    @StateObject var contactsManager = ContactsManager()
+//    @StateObject var contactsManager = ContactsManager()
+    @EnvironmentObject var privateDataManager: PrivateDataManager
     var body: some View {
-        List(contactsManager.contacts) { contact in
+        List(privateDataManager.contacts) { contact in
             HStack(spacing: 0) {
                 Text(contact.givenName)
                 Text(" ")
@@ -35,7 +36,7 @@ struct ContactsView: View {
         }
         .task {
             do {
-                try await contactsManager.loadContacts()
+                try await privateDataManager.loadContacts()
             } catch {
                 errorText = error.localizedDescription
             }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HealthView: View {
+    @EnvironmentObject var privateDataManager: PrivateDataManager
     var body: some View {
         Text("Hello, World!")
     }

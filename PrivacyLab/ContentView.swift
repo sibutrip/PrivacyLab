@@ -19,15 +19,17 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var notificationManager = NotificationManager()
+    @StateObject var privateDataManager = PrivateDataManager()
     var body: some View {
         TabView {
-            MapView()
-                .tabItem { Label("Map", systemImage: "map") }
             ContactsView()
                 .tabItem { Label("Contacts", systemImage: "person.3") }
+            MapView()
+                .tabItem { Label("Map", systemImage: "map") }
             HealthView()
                 .tabItem { Label("Health", systemImage: "cross") }
         }
+        .environmentObject(privateDataManager)
     }
 }
 

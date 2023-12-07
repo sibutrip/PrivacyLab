@@ -10,11 +10,9 @@
 		7487064F2B2226790050D9A7 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7487064E2B2226790050D9A7 /* MapView.swift */; };
 		748706512B2226840050D9A7 /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748706502B2226840050D9A7 /* ContactsView.swift */; };
 		748706532B22268B0050D9A7 /* HealthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748706522B22268B0050D9A7 /* HealthView.swift */; };
-		748706552B2226D60050D9A7 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748706542B2226D60050D9A7 /* MapManager.swift */; };
-		748706592B2227040050D9A7 /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748706582B2227040050D9A7 /* HealthManager.swift */; };
-		7487065C2B22272B0050D9A7 /* ContactsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7487065B2B22272B0050D9A7 /* ContactsManager.swift */; };
 		7487065E2B2227F70050D9A7 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7487065D2B2227F70050D9A7 /* Contact.swift */; };
 		748706602B22495E0050D9A7 /* ContactsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7487065F2B22495E0050D9A7 /* ContactsService.swift */; };
+		748706632B2253B50050D9A7 /* PrivateDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748706622B2253B50050D9A7 /* PrivateDataManager.swift */; };
 		74A9BF602B1E2DEA00A24A53 /* PrivacyLabApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A9BF5F2B1E2DEA00A24A53 /* PrivacyLabApp.swift */; };
 		74A9BF622B1E2DEA00A24A53 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A9BF612B1E2DEA00A24A53 /* ContentView.swift */; };
 		74A9BF642B1E2DEB00A24A53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74A9BF632B1E2DEB00A24A53 /* Assets.xcassets */; };
@@ -26,11 +24,10 @@
 		7487064E2B2226790050D9A7 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		748706502B2226840050D9A7 /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
 		748706522B22268B0050D9A7 /* HealthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthView.swift; sourceTree = "<group>"; };
-		748706542B2226D60050D9A7 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
-		748706582B2227040050D9A7 /* HealthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthManager.swift; sourceTree = "<group>"; };
-		7487065B2B22272B0050D9A7 /* ContactsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsManager.swift; sourceTree = "<group>"; };
 		7487065D2B2227F70050D9A7 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		7487065F2B22495E0050D9A7 /* ContactsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsService.swift; sourceTree = "<group>"; };
+		748706612B224FB80050D9A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		748706622B2253B50050D9A7 /* PrivateDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateDataManager.swift; sourceTree = "<group>"; };
 		74A9BF5C2B1E2DEA00A24A53 /* PrivacyLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrivacyLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74A9BF5F2B1E2DEA00A24A53 /* PrivacyLabApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyLabApp.swift; sourceTree = "<group>"; };
 		74A9BF612B1E2DEA00A24A53 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,7 +51,6 @@
 			isa = PBXGroup;
 			children = (
 				7487064E2B2226790050D9A7 /* MapView.swift */,
-				748706542B2226D60050D9A7 /* MapManager.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -63,7 +59,6 @@
 			isa = PBXGroup;
 			children = (
 				748706522B22268B0050D9A7 /* HealthView.swift */,
-				748706582B2227040050D9A7 /* HealthManager.swift */,
 			);
 			path = Health;
 			sourceTree = "<group>";
@@ -72,7 +67,6 @@
 			isa = PBXGroup;
 			children = (
 				748706502B2226840050D9A7 /* ContactsView.swift */,
-				7487065B2B22272B0050D9A7 /* ContactsManager.swift */,
 				7487065F2B22495E0050D9A7 /* ContactsService.swift */,
 				7487065D2B2227F70050D9A7 /* Contact.swift */,
 			);
@@ -98,8 +92,10 @@
 		74A9BF5E2B1E2DEA00A24A53 /* PrivacyLab */ = {
 			isa = PBXGroup;
 			children = (
+				748706612B224FB80050D9A7 /* Info.plist */,
 				74A9BF5F2B1E2DEA00A24A53 /* PrivacyLabApp.swift */,
 				74A9BF612B1E2DEA00A24A53 /* ContentView.swift */,
+				748706622B2253B50050D9A7 /* PrivateDataManager.swift */,
 				7487065A2B2227220050D9A7 /* Contacts */,
 				748706572B2226FC0050D9A7 /* Health */,
 				748706562B2226F50050D9A7 /* Map */,
@@ -189,16 +185,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				748706532B22268B0050D9A7 /* HealthView.swift in Sources */,
-				7487065C2B22272B0050D9A7 /* ContactsManager.swift in Sources */,
 				7487065E2B2227F70050D9A7 /* Contact.swift in Sources */,
-				748706552B2226D60050D9A7 /* MapManager.swift in Sources */,
 				74A9BF6E2B1E2F0700A24A53 /* NotificationManager.swift in Sources */,
 				7487064F2B2226790050D9A7 /* MapView.swift in Sources */,
 				74A9BF622B1E2DEA00A24A53 /* ContentView.swift in Sources */,
+				748706632B2253B50050D9A7 /* PrivateDataManager.swift in Sources */,
 				748706512B2226840050D9A7 /* ContactsView.swift in Sources */,
 				748706602B22495E0050D9A7 /* ContactsService.swift in Sources */,
 				74A9BF602B1E2DEA00A24A53 /* PrivacyLabApp.swift in Sources */,
-				748706592B2227040050D9A7 /* HealthManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,7 +329,10 @@
 				DEVELOPMENT_TEAM = 3UR85MK9RT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PrivacyLab/Info.plist;
 				INFOPLIST_KEY_NSContactsUsageDescription = "\"\"";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "\"\"";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "\"\"";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -365,7 +362,10 @@
 				DEVELOPMENT_TEAM = 3UR85MK9RT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PrivacyLab/Info.plist;
 				INFOPLIST_KEY_NSContactsUsageDescription = "\"\"";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "\"\"";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "\"\"";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

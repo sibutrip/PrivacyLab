@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct MapView: View {
-    @StateObject var mapManager = MapManager()
+    @EnvironmentObject var privateDataManager: PrivateDataManager
     var body: some View {
-        Text("Hello, World!")
+        if privateDataManager.hasLocationPermission {
+            Text("map")
+        } else {
+            Text("hey you need to enable blah blah blah")
+        }
     }
 }
 
