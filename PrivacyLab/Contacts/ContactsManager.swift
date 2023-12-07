@@ -7,4 +7,12 @@
 
 import SwiftUI
 
-class ContactsManager: ObservableObject { }
+@MainActor
+class ContactsManager: ObservableObject {
+    @Published var contacts: [Contact] = []
+    let contactService = ContactService()
+    func loadContacts() async throws {
+        let contacts = try await contactService.loadContacts()
+        self.contacts = contacts
+    }
+}
