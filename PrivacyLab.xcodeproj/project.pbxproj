@@ -17,7 +17,6 @@
 		74A9BF622B1E2DEA00A24A53 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A9BF612B1E2DEA00A24A53 /* ContentView.swift */; };
 		74A9BF642B1E2DEB00A24A53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74A9BF632B1E2DEB00A24A53 /* Assets.xcassets */; };
 		74A9BF672B1E2DEB00A24A53 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74A9BF662B1E2DEB00A24A53 /* Preview Assets.xcassets */; };
-		74A9BF6E2B1E2F0700A24A53 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A9BF6D2B1E2F0700A24A53 /* NotificationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +32,6 @@
 		74A9BF612B1E2DEA00A24A53 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		74A9BF632B1E2DEB00A24A53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74A9BF662B1E2DEB00A24A53 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		74A9BF6D2B1E2F0700A24A53 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +97,6 @@
 				7487065A2B2227220050D9A7 /* Contacts */,
 				748706572B2226FC0050D9A7 /* Health */,
 				748706562B2226F50050D9A7 /* Map */,
-				74A9BF6D2B1E2F0700A24A53 /* NotificationManager.swift */,
 				74A9BF632B1E2DEB00A24A53 /* Assets.xcassets */,
 				74A9BF652B1E2DEB00A24A53 /* Preview Content */,
 			);
@@ -186,7 +183,6 @@
 			files = (
 				748706532B22268B0050D9A7 /* HealthView.swift in Sources */,
 				7487065E2B2227F70050D9A7 /* Contact.swift in Sources */,
-				74A9BF6E2B1E2F0700A24A53 /* NotificationManager.swift in Sources */,
 				7487064F2B2226790050D9A7 /* MapView.swift in Sources */,
 				74A9BF622B1E2DEA00A24A53 /* ContentView.swift in Sources */,
 				748706632B2253B50050D9A7 /* PrivateDataManager.swift in Sources */,

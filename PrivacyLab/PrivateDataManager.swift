@@ -13,14 +13,38 @@ import MapKit
 @MainActor
 class PrivateDataManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     
+    public func navigateToSettings() {
+        UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
+    }
+    
+    // MARK: - Contacts
+    
+    @Published var contacts: [Contact] = []
+    private let contactService = ContactService()
+    
+    func loadContacts() async throws {
+        let contacts = try await contactService.loadContacts()
+        self.contacts = contacts
+    }
+    
+    func addContact(givenName: String, familyName: String) async throws {
+        let addedContact = Contact(givenName: givenName, familyName: familyName)
+        try await contactService.add(addedContact)
+        contacts.append(addedContact)
+    }
+    
+    
     // MARK: - Location
-    let locationManager = CLLocationManager()
+    private let locationManager = CLLocationManager()
     @Published var hasLocationPermission = false
     @Published var location: CLLocation?
     @Published var mapArea: MKMapRect?
     
     override init() {
         super.init()
+    }
+    
+    func requestLocationPermission() {
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
     }
@@ -50,24 +74,16 @@ class PrivateDataManager: NSObject, ObservableObject, CLLocationManagerDelegate 
         manager.stopUpdatingLocation()
     }
     
-    // MARK: - Contacts
-    
-    @Published var contacts: [Contact] = []
-    let contactService = ContactService()
-    func loadContacts() async throws {
-        let contacts = try await contactService.loadContacts()
-        self.contacts = contacts
-    }
-    
-    func addContact(givenName: String, familyName: String) async throws {
-        let addedContact = Contact(givenName: givenName, familyName: familyName)
-        try await contactService.add(addedContact)
-        contacts.append(addedContact)
-    }
-    
     // MARK: - Health
     
     // get permission for health data. (use x method)
     // display the data
     // give them instructions on what to do if they havent given permission
+}
+
+
+extension MKMapRect: Equatable {
+    public static func == (lhs: MKMapRect, rhs: MKMapRect) -> Bool {
+        lhs.origin.coordinate.latitude == rhs.origin.coordinate.latitude && lhs.origin.coordinate.longitude == rhs.origin.coordinate.longitude
+    }
 }

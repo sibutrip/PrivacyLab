@@ -16,20 +16,20 @@ import SwiftUI
 /// toolbar button should show an error saying why they cant create a contact if they havent given permission
 
 struct ContactsView: View {
+    @EnvironmentObject var privateDataManager: PrivateDataManager
+    @State private var hasContactsPermission = true
+
     @State var errorText: String?
     var showingError: Binding<Bool> {
         Binding {
             errorText != nil
         } set: { newValue in
-            if !newValue {
-                errorText = nil
-            }
+            if !newValue { errorText = nil }
         }
     }
-    @EnvironmentObject var privateDataManager: PrivateDataManager
     var body: some View {
         Group {
-            if privateDataManager.hasContactsPermission {
+            if hasContactsPermission {
                 List(privateDataManager.contacts) { contact in
                     HStack(spacing: 0) {
                         Text(contact.givenName)
@@ -41,16 +41,17 @@ struct ContactsView: View {
                 // make an alert to take them to settings (provide that function for them)
                 // they should make the text that tells the user what to do to enable permission
                 
-            }
-            else {
+            } else {
                 Text("hasContactsPermission is false")
             }
         }
         .task {
             do {
                 try await privateDataManager.loadContacts()
+                hasContactsPermission = true
             } catch {
-                errorText = error.localizedDescription
+                errorText = "Not allowed"
+                hasContactsPermission = false
             }
         }
         .alert(errorText ?? "", isPresented: showingError) {
@@ -60,7 +61,3 @@ struct ContactsView: View {
         }
     }
 }
-
-//#Preview {
-//    ContactsView()
-//}
