@@ -23,8 +23,8 @@ struct ContentView: View {
     @StateObject var privateDataManager = PrivateDataManager()
     var body: some View {
         TabView {
-//            ContactsView()
-//                .tabItem { Label("Contacts", systemImage: "person.3") }
+            ContactsView()
+                .tabItem { Label("Contacts", systemImage: "person.3") }
             MapView()
                 .tabItem { Label("Map", systemImage: "map") }
             HealthView()

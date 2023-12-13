@@ -9,6 +9,7 @@ import SwiftUI
 import Contacts
 import CoreLocation
 import MapKit
+import HealthKit
 
 @MainActor
 class PrivateDataManager: NSObject, ObservableObject, CLLocationManagerDelegate {
@@ -42,6 +43,10 @@ class PrivateDataManager: NSObject, ObservableObject, CLLocationManagerDelegate 
     
     override init() {
         super.init()
+        requestLocationPermission()
+        Task {
+            try await getHealthPermission()
+        }
     }
     
     func requestLocationPermission() {
@@ -75,6 +80,14 @@ class PrivateDataManager: NSObject, ObservableObject, CLLocationManagerDelegate 
     }
     
     // MARK: - Health
+    
+    private let healthStore = HKHealthStore()
+
+    
+    func getHealthPermission() async throws {
+        try await healthStore.requestAuthorization(toShare: [], read: [.activitySummaryType()])
+    }
+    
     
     // get permission for health data. (use x method)
     // display the data
