@@ -23,9 +23,9 @@ class PrivateDataManager: NSObject, ObservableObject, CLLocationManagerDelegate 
     @Published var contacts: [Contact] = []
     private let contactService = ContactService()
     
-    func loadContacts() async throws {
-        let contacts = try await contactService.loadContacts()
-        self.contacts = contacts
+    func getContactsPermission() async throws {
+        try await contactService.requestPermission()
+        self.contacts = try await contactService.loadContacts()
     }
     
     func addContact(givenName: String, familyName: String) async throws {
@@ -45,6 +45,7 @@ class PrivateDataManager: NSObject, ObservableObject, CLLocationManagerDelegate 
         super.init()
         requestLocationPermission()
         Task {
+            try await getContactsPermission()
             try await getHealthPermission()
         }
     }

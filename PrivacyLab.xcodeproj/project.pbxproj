@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		740A50482B2A52AB00311DED /* ContactDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A50472B2A52AB00311DED /* ContactDetailView.swift */; };
+		740A504A2B2A55FB00311DED /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A50492B2A55FB00311DED /* SwiftUIView.swift */; };
 		7487064F2B2226790050D9A7 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7487064E2B2226790050D9A7 /* MapView.swift */; };
 		748706512B2226840050D9A7 /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748706502B2226840050D9A7 /* ContactsView.swift */; };
 		748706532B22268B0050D9A7 /* HealthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748706522B22268B0050D9A7 /* HealthView.swift */; };
@@ -21,6 +23,8 @@
 
 /* Begin PBXFileReference section */
 		740A50462B2A4CAE00311DED /* PrivacyLab.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PrivacyLab.entitlements; sourceTree = "<group>"; };
+		740A50472B2A52AB00311DED /* ContactDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailView.swift; sourceTree = "<group>"; };
+		740A50492B2A55FB00311DED /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		7487064E2B2226790050D9A7 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		748706502B2226840050D9A7 /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
 		748706522B22268B0050D9A7 /* HealthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthView.swift; sourceTree = "<group>"; };
@@ -65,8 +69,10 @@
 		7487065A2B2227220050D9A7 /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
+				740A50492B2A55FB00311DED /* SwiftUIView.swift */,
 				748706502B2226840050D9A7 /* ContactsView.swift */,
 				7487065F2B22495E0050D9A7 /* ContactsService.swift */,
+				740A50472B2A52AB00311DED /* ContactDetailView.swift */,
 				7487065D2B2227F70050D9A7 /* Contact.swift */,
 			);
 			path = Contacts;
@@ -187,8 +193,10 @@
 				7487065E2B2227F70050D9A7 /* Contact.swift in Sources */,
 				7487064F2B2226790050D9A7 /* MapView.swift in Sources */,
 				74A9BF622B1E2DEA00A24A53 /* ContentView.swift in Sources */,
+				740A504A2B2A55FB00311DED /* SwiftUIView.swift in Sources */,
 				748706632B2253B50050D9A7 /* PrivateDataManager.swift in Sources */,
 				748706512B2226840050D9A7 /* ContactsView.swift in Sources */,
+				740A50482B2A52AB00311DED /* ContactDetailView.swift in Sources */,
 				748706602B22495E0050D9A7 /* ContactsService.swift in Sources */,
 				74A9BF602B1E2DEA00A24A53 /* PrivacyLabApp.swift in Sources */,
 			);

@@ -18,7 +18,12 @@ import SwiftUI
 struct ContactsView: View {
     @EnvironmentObject var privateDataManager: PrivateDataManager
     @State private var hasContactsPermission = true
-
+    @State private var friendName = ""
+    @State private var addingNewFriend = false
+    @State private var addingNewFriendManually = false
+    @State private var addingNewFriendFromContacts = false
+    @State private var addedFriendsFromContacts = [Contact]()
+    
     @State var errorText: String?
     var showingError: Binding<Bool> {
         Binding {
@@ -28,36 +33,64 @@ struct ContactsView: View {
         }
     }
     var body: some View {
-        Group {
-            if hasContactsPermission {
-                List(privateDataManager.contacts) { contact in
-                    HStack(spacing: 0) {
-                        Text(contact.givenName)
-                        Text(" ")
-                        Text(contact.familyName)
+        NavigationStack {
+            Group {
+                if hasContactsPermission {
+                    List(addedFriendsFromContacts) { contact in
+                        HStack(spacing: 0) {
+                            Text(contact.givenName)
+                            Text(" ")
+                            Text(contact.familyName)
+                        }
+                    }
+                    // if they dont have permission
+                    // make an alert to take them to settings (provide that function for them)
+                    // they should make the text that tells the user what to do to enable permission
+                    
+                } else {
+                    Text("hasContactsPermission is false")
+                }
+            }
+            .alert("Add new Friend", isPresented: $addingNewFriend) {
+                VStack {
+                    Button("Import From Contacts") {
+                        Task {
+                            addingNewFriendFromContacts = true
+                        }
+                    }
+                    Button("Add Manually") {
+                        addingNewFriendManually = true
                     }
                 }
-                // if they dont have permission
-                // make an alert to take them to settings (provide that function for them)
-                // they should make the text that tells the user what to do to enable permission
-                
-            } else {
-                Text("hasContactsPermission is false")
             }
-        }
-        .task {
-            do {
-                try await privateDataManager.loadContacts()
-                hasContactsPermission = true
-            } catch {
-                errorText = "Not allowed"
-                hasContactsPermission = false
+            .alert("Add Manually", isPresented: $addingNewFriendManually) {
+                VStack {
+                    TextField("Friend name", text: $friendName)
+                    HStack {
+                        Button("Cancel", role: .cancel) { }
+                        Button("Add") {
+                            // Todo add action here
+                        }
+                    }
+                }
             }
-        }
-        .alert(errorText ?? "", isPresented: showingError) {
-            Button("OK") {
-                showingError.wrappedValue = false
+            .sheet(isPresented: $addingNewFriendFromContacts) {
+                AddingFriendsView(friends: $addedFriendsFromContacts)
+            }
+            .alert(errorText ?? "", isPresented: showingError) {
+                Button("OK") {
+                    showingError.wrappedValue = false
+                }
+            }
+            .navigationTitle("Friends")
+            .toolbar {
+                Button {
+                    addingNewFriend = true
+                } label: {
+                    Label("Add New Friend", systemImage: "plus")
+                }
             }
         }
     }
+    func addFriend() { }
 }

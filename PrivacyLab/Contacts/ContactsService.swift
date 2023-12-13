@@ -9,6 +9,9 @@ import Contacts
 
 actor ContactService {
     private let contactStore = CNContactStore()
+    func requestPermission() async throws {
+        try await contactStore.requestAccess(for: .contacts)
+    }
     func loadContacts() async throws -> [Contact] {
         let keysToFetch = [CNContactFormatter.descriptorForRequiredKeys(for: .fullName)]
         let fetchRequest = CNContactFetchRequest(keysToFetch: keysToFetch)
