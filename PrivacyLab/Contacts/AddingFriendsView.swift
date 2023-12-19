@@ -16,7 +16,7 @@ struct AddingFriendsView: View {
         NavigationStack {
             List {
                 ForEach(privateDataManager.contacts) { contact in
-                    ContactDetailView(contact: contact, addedFriendsFromContacts: $friends)
+                    ContactDetailView(contact: contact, friends: $friends)
                 }
             }
             .toolbar {

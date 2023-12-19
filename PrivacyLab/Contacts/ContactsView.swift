@@ -21,13 +21,13 @@ struct ContactsView: View {
     @State private var addingNewFriend = false
     @State private var addingNewFriendManually = false
     @State private var addingNewFriendFromContacts = false
-    @State private var addedFriendsFromContacts = [Contact]()
+    @State private var friends = [Contact]()
     
     @State var errorText: String?
     var body: some View {
         NavigationStack {
             Group {
-                List(addedFriendsFromContacts) { contact in
+                List(friends) { contact in
                     HStack(spacing: 0) {
                         Text(contact.givenName)
                         Text(" ")
@@ -66,7 +66,7 @@ struct ContactsView: View {
                 }
             }
             .sheet(isPresented: $addingNewFriendFromContacts) {
-                AddingFriendsView(friends: $addedFriendsFromContacts)
+                AddingFriendsView(friends: $friends)
             }
             .navigationTitle("Friends")
             .toolbar {

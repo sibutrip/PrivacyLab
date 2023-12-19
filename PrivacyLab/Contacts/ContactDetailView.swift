@@ -10,7 +10,7 @@ import SwiftUI
 struct ContactDetailView: View {
     let contact: Contact
     @State private var isSelected: Bool
-    @Binding var addedFriendsFromContacts: [Contact]
+    @Binding var friends: [Contact]
     var body: some View {
         HStack(spacing: 0) {
             Toggle("", isOn: $isSelected)
@@ -21,17 +21,17 @@ struct ContactDetailView: View {
             Text(contact.familyName)
         }
         .onChange(of: isSelected) { _, newValue in
-            if addedFriendsFromContacts.contains(where: { $0.id == contact.id }) {
-                addedFriendsFromContacts = addedFriendsFromContacts.filter { $0.id != contact.id }
+            if friends.contains(where: { $0.id == contact.id }) {
+                friends = friends.filter { $0.id != contact.id }
             } else {
-                addedFriendsFromContacts.append(contact)
+                friends.append(contact)
             }
         }
     }
-    init(contact: Contact, addedFriendsFromContacts: Binding<[Contact]>) {
+    init(contact: Contact, friends: Binding<[Contact]>) {
         self.contact = contact
-        _addedFriendsFromContacts = addedFriendsFromContacts
-        if addedFriendsFromContacts.contains(where: { $0.id == contact.id }) {
+        _friends = friends
+        if friends.contains(where: { $0.id == contact.id }) {
             _isSelected = .init(initialValue: true)
         } else {
             _isSelected = .init(initialValue: false)
@@ -41,7 +41,7 @@ struct ContactDetailView: View {
 
 #Preview {
     List {
-        ContactDetailView(contact: .init(givenName: "Cory", familyName: "Tripathy"), addedFriendsFromContacts: .constant([]))
-        ContactDetailView(contact: .init(givenName: "Kevin", familyName: "Buchhholzz"), addedFriendsFromContacts: .constant([]))
+        ContactDetailView(contact: .init(givenName: "Cory", familyName: "Tripathy"), friends: .constant([]))
+        ContactDetailView(contact: .init(givenName: "Kevin", familyName: "Buchhholzz"), friends: .constant([]))
     }
 }
