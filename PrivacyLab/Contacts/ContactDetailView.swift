@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContactDetailView: View {
     let contact: Contact
-    @State private var isSelected = false
+    @State private var isSelected: Bool
     @Binding var addedFriendsFromContacts: [Contact]
     var body: some View {
         HStack(spacing: 0) {
@@ -26,6 +26,15 @@ struct ContactDetailView: View {
             } else {
                 addedFriendsFromContacts.append(contact)
             }
+        }
+    }
+    init(contact: Contact, addedFriendsFromContacts: Binding<[Contact]>) {
+        self.contact = contact
+        _addedFriendsFromContacts = addedFriendsFromContacts
+        if addedFriendsFromContacts.contains(where: { $0.id == contact.id }) {
+            _isSelected = .init(initialValue: true)
+        } else {
+            _isSelected = .init(initialValue: false)
         }
     }
 }

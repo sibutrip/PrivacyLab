@@ -17,7 +17,6 @@ import SwiftUI
 
 struct ContactsView: View {
     @EnvironmentObject var privateDataManager: PrivateDataManager
-    @State private var hasContactsPermission = true
     @State private var friendName = ""
     @State private var addingNewFriend = false
     @State private var addingNewFriendManually = false
@@ -25,30 +24,15 @@ struct ContactsView: View {
     @State private var addedFriendsFromContacts = [Contact]()
     
     @State var errorText: String?
-    var showingError: Binding<Bool> {
-        Binding {
-            errorText != nil
-        } set: { newValue in
-            if !newValue { errorText = nil }
-        }
-    }
     var body: some View {
         NavigationStack {
             Group {
-                if hasContactsPermission {
-                    List(addedFriendsFromContacts) { contact in
-                        HStack(spacing: 0) {
-                            Text(contact.givenName)
-                            Text(" ")
-                            Text(contact.familyName)
-                        }
+                List(addedFriendsFromContacts) { contact in
+                    HStack(spacing: 0) {
+                        Text(contact.givenName)
+                        Text(" ")
+                        Text(contact.familyName)
                     }
-                    // if they dont have permission
-                    // make an alert to take them to settings (provide that function for them)
-                    // they should make the text that tells the user what to do to enable permission
-                    
-                } else {
-                    Text("hasContactsPermission is false")
                 }
             }
             .alert("Add new Friend", isPresented: $addingNewFriend) {
@@ -69,18 +53,20 @@ struct ContactsView: View {
                     HStack {
                         Button("Cancel", role: .cancel) { }
                         Button("Add") {
-                            // Todo add action here
+                            // TODO add action here
                         }
                     }
                 }
             }
+            .task {
+                do {
+                    try await privateDataManager.getContactsPermission()
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
             .sheet(isPresented: $addingNewFriendFromContacts) {
                 AddingFriendsView(friends: $addedFriendsFromContacts)
-            }
-            .alert(errorText ?? "", isPresented: showingError) {
-                Button("OK") {
-                    showingError.wrappedValue = false
-                }
             }
             .navigationTitle("Friends")
             .toolbar {

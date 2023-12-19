@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AddingFriendsView: View {
     @EnvironmentObject var privateDataManager: PrivateDataManager
+    @State var hasNoPermission = false
     @Environment(\.dismiss) var dismiss
     @Binding var friends: [Contact]
     var body: some View {
@@ -23,11 +24,18 @@ struct AddingFriendsView: View {
                     dismiss()
                 }
             }
-            .onDisappear {
-                friends.forEach { contact in
-                    privateDataManager.contacts = privateDataManager.contacts.filter { $0.id != contact.id }
+            .onAppear {
+                Task {
+                    if !privateDataManager.hasContactsPermission {
+                        hasNoPermission = true
+                    }
                 }
             }
+        }
+        .alert("No Contacts Authorization Given", isPresented: $hasNoPermission) {
+            Button("OK") { dismiss() }
+        } message: {
+            Text("Go to settings to enable this permission")
         }
     }
 }

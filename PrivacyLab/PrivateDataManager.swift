@@ -21,10 +21,11 @@ class PrivateDataManager: NSObject, ObservableObject, CLLocationManagerDelegate 
     // MARK: - Contacts
     
     @Published var contacts: [Contact] = []
+    @Published var hasContactsPermission = false
     private let contactService = ContactService()
     
     func getContactsPermission() async throws {
-        try await contactService.requestPermission()
+        self.hasContactsPermission = try await contactService.requestPermission()
         self.contacts = try await contactService.loadContacts()
     }
     
@@ -44,10 +45,8 @@ class PrivateDataManager: NSObject, ObservableObject, CLLocationManagerDelegate 
     override init() {
         super.init()
         requestLocationPermission()
-        Task {
-            try await getContactsPermission()
-            try await getHealthPermission()
-        }
+//            getContactsPermission()
+//            getHealthPermission()
     }
     
     func requestLocationPermission() {
@@ -85,8 +84,10 @@ class PrivateDataManager: NSObject, ObservableObject, CLLocationManagerDelegate 
     private let healthStore = HKHealthStore()
 
     
-    func getHealthPermission() async throws {
-        try await healthStore.requestAuthorization(toShare: [], read: [.activitySummaryType()])
+    func getHealthPermission() {
+        Task {
+            try await healthStore.requestAuthorization(toShare: [], read: [.activitySummaryType()])
+        }
     }
     
     
