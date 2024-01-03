@@ -12,11 +12,13 @@ import MapKit
 @MainActor
 class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     private let locationManager = CLLocationManager()
-    @Published var hasLocationPermission = false
     @Published var location: CLLocation?
     @Published var mapArea: MKMapRect?
+    public var hasLocationPermission: Bool {
+        mapArea != nil
+    }
     
-    func requestLocationPermission() {
+    public func requestLocationPermission() {
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
     }

@@ -8,42 +8,22 @@
 import SwiftUI
 import MapKit
 
-/// 1. make it not ask for permission until you navigate to the mapview
-///
+#warning("MapView Step 1: Delay requesting access to the user's location as long as possible. Where would be a good place request that?")
+#warning("MapView Step 2: As of now, if you deny permission of the app, the show the user the `mapCameraPosition` which is centered on the United States. Instead of this, let's show the `mapCameraPosition` only if the user has enabled location permissions (use the `hasLocationPermission` property of our `MapViewModel`); otherwise, show a button that takes the user to PrivacyLab's Settings page (hint: use the `navigateToSettings` method in `SettingsService`, look at how we use it `ContactsView` if you get stuck).")
+#warning("MapView Step 3: Change the `NSLocationWhenInUseUsageDescription` description in PrivacyLab's info.plist to be more descriptive.")
+
 struct MapView: View {
     @EnvironmentObject var mapViewModel: MapViewModel
     @State private var mapCameraPosition = MapCameraPosition.automatic
-    @State private var hasLocationPermission = false
     
     var body: some View {
-        Group {
-            if hasLocationPermission {
-                Map(position: $mapCameraPosition)
-            } else {
-                // they should make the text that tells the user what to do to enable permission
-                // make an alert to take them to settings. (they can reference contacts view for the instructions)
-                Button {
-                    SettingsService.navigateToSettings()
-                } label: {
-                    Text("hey you need to enable blah blah blah")
+        Map(position: $mapCameraPosition)
+            .onChange(of: mapViewModel.mapArea) { _ , mapLocation in
+                if let mapLocation {
+                    let cameraPosition = MapCameraPosition.rect(mapLocation)
+                    mapCameraPosition = cameraPosition
                 }
             }
-        }
-        .onChange(of: mapViewModel.mapArea) { _ , mapLocation in
-            if let mapLocation {
-                let cameraPosition = MapCameraPosition.rect(mapLocation)
-                mapCameraPosition = cameraPosition
-                hasLocationPermission = true
-            } else {
-                hasLocationPermission = false
-            }
-        }
-    }
-}
-
-extension MKMapRect: Equatable {
-    public static func == (lhs: MKMapRect, rhs: MKMapRect) -> Bool {
-        lhs.origin.coordinate.latitude == rhs.origin.coordinate.latitude && lhs.origin.coordinate.longitude == rhs.origin.coordinate.longitude
     }
 }
 

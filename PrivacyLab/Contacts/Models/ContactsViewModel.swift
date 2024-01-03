@@ -15,7 +15,7 @@ class ContactsViewModel: ObservableObject {
     
     private let contactService = ContactService()
     
-    func requestContactsPermission() async {
+    public func requestContactsPermission() async {
         do {
             self.hasContactsPermission = try await contactService.requestPermission()
             self.contacts = try await contactService.loadContacts()
@@ -24,7 +24,7 @@ class ContactsViewModel: ObservableObject {
         }
     }
     
-    func addContact(givenName: String, familyName: String) async throws {
+    public func addContact(givenName: String, familyName: String) async throws {
         let addedContact = Contact(givenName: givenName, familyName: familyName)
         try await contactService.add(addedContact)
         contacts.append(addedContact)

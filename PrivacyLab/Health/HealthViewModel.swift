@@ -10,19 +10,18 @@ import HealthKit
 
 @MainActor
 class HealthViewModel: ObservableObject {
-    // MARK: - Health
     
     private let healthStore = HKHealthStore()
     @State var steps = 0.0
     
     
-    func requestHealthPermission() {
+    public func requestHealthPermission() {
         Task(priority: .userInitiated) {
             try await healthStore.requestAuthorization(toShare: [], read: [HKSampleType.quantityType(forIdentifier: .stepCount)!])
         }
     }
     
-    func stepsFromToday() {
+    public func stepsFromToday() {
         guard let stepType = HKSampleType.quantityType(forIdentifier: .stepCount) else { return }
         let predicate = HKQuery.predicateForSamples(withStart: .distantPast, end: .distantFuture, options: HKQueryOptions())
         
