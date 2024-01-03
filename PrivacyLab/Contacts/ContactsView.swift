@@ -16,7 +16,7 @@ import SwiftUI
 /// toolbar button should show an error saying why they cant create a contact if they havent given permission
 
 struct ContactsView: View {
-    @EnvironmentObject var privateDataManager: PrivateDataManager
+    @EnvironmentObject var contactsViewModel: ContactsViewModel
     @State private var friendName = ""
     @State private var addingNewFriend = false
     @State private var addingNewFriendManually = false
@@ -60,7 +60,7 @@ struct ContactsView: View {
             }
             .task {
                 do {
-                    try await privateDataManager.getContactsPermission()
+                    try await contactsViewModel.getContactsPermission()
                 } catch {
                     print(error.localizedDescription)
                 }

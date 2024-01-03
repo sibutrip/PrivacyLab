@@ -14,11 +14,13 @@
 		748706532B22268B0050D9A7 /* HealthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748706522B22268B0050D9A7 /* HealthView.swift */; };
 		7487065E2B2227F70050D9A7 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7487065D2B2227F70050D9A7 /* Contact.swift */; };
 		748706602B22495E0050D9A7 /* ContactsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7487065F2B22495E0050D9A7 /* ContactsService.swift */; };
-		748706632B2253B50050D9A7 /* PrivateDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748706622B2253B50050D9A7 /* PrivateDataManager.swift */; };
 		74A9BF602B1E2DEA00A24A53 /* PrivacyLabApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A9BF5F2B1E2DEA00A24A53 /* PrivacyLabApp.swift */; };
 		74A9BF622B1E2DEA00A24A53 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A9BF612B1E2DEA00A24A53 /* ContentView.swift */; };
 		74A9BF642B1E2DEB00A24A53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74A9BF632B1E2DEB00A24A53 /* Assets.xcassets */; };
 		74A9BF672B1E2DEB00A24A53 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74A9BF662B1E2DEB00A24A53 /* Preview Assets.xcassets */; };
+		74CE53C42B45CEB9001551B3 /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CE53C32B45CEB9001551B3 /* ContactsViewModel.swift */; };
+		74CE53C62B45CEE8001551B3 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CE53C52B45CEE8001551B3 /* MapViewModel.swift */; };
+		74CE53CA2B45CF48001551B3 /* HealthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CE53C92B45CF48001551B3 /* HealthViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,12 +33,14 @@
 		7487065D2B2227F70050D9A7 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		7487065F2B22495E0050D9A7 /* ContactsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsService.swift; sourceTree = "<group>"; };
 		748706612B224FB80050D9A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		748706622B2253B50050D9A7 /* PrivateDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateDataManager.swift; sourceTree = "<group>"; };
 		74A9BF5C2B1E2DEA00A24A53 /* PrivacyLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrivacyLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74A9BF5F2B1E2DEA00A24A53 /* PrivacyLabApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyLabApp.swift; sourceTree = "<group>"; };
 		74A9BF612B1E2DEA00A24A53 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		74A9BF632B1E2DEB00A24A53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74A9BF662B1E2DEB00A24A53 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		74CE53C32B45CEB9001551B3 /* ContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
+		74CE53C52B45CEE8001551B3 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		74CE53C92B45CF48001551B3 /* HealthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				7487064E2B2226790050D9A7 /* MapView.swift */,
+				74CE53C52B45CEE8001551B3 /* MapViewModel.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -62,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				748706522B22268B0050D9A7 /* HealthView.swift */,
+				74CE53C92B45CF48001551B3 /* HealthViewModel.swift */,
 			);
 			path = Health;
 			sourceTree = "<group>";
@@ -71,6 +77,7 @@
 			children = (
 				748706502B2226840050D9A7 /* ContactsView.swift */,
 				740A50492B2A55FB00311DED /* AddingFriendsView.swift */,
+				74CE53C32B45CEB9001551B3 /* ContactsViewModel.swift */,
 				740A50472B2A52AB00311DED /* ContactDetailView.swift */,
 				7487065D2B2227F70050D9A7 /* Contact.swift */,
 				7487065F2B22495E0050D9A7 /* ContactsService.swift */,
@@ -101,7 +108,6 @@
 				748706612B224FB80050D9A7 /* Info.plist */,
 				74A9BF5F2B1E2DEA00A24A53 /* PrivacyLabApp.swift */,
 				74A9BF612B1E2DEA00A24A53 /* ContentView.swift */,
-				748706622B2253B50050D9A7 /* PrivateDataManager.swift */,
 				7487065A2B2227220050D9A7 /* Contacts */,
 				748706562B2226F50050D9A7 /* Map */,
 				748706572B2226FC0050D9A7 /* Health */,
@@ -194,11 +200,13 @@
 				7487064F2B2226790050D9A7 /* MapView.swift in Sources */,
 				74A9BF622B1E2DEA00A24A53 /* ContentView.swift in Sources */,
 				740A504A2B2A55FB00311DED /* AddingFriendsView.swift in Sources */,
-				748706632B2253B50050D9A7 /* PrivateDataManager.swift in Sources */,
 				748706512B2226840050D9A7 /* ContactsView.swift in Sources */,
 				740A50482B2A52AB00311DED /* ContactDetailView.swift in Sources */,
+				74CE53C42B45CEB9001551B3 /* ContactsViewModel.swift in Sources */,
 				748706602B22495E0050D9A7 /* ContactsService.swift in Sources */,
+				74CE53CA2B45CF48001551B3 /* HealthViewModel.swift in Sources */,
 				74A9BF602B1E2DEA00A24A53 /* PrivacyLabApp.swift in Sources */,
+				74CE53C62B45CEE8001551B3 /* MapViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,7 +11,7 @@ import MapKit
 /// 1. make it not ask for permission until you navigate to the mapview
 ///
 struct MapView: View {
-    @EnvironmentObject var privateDataManager: PrivateDataManager
+    @EnvironmentObject var mapViewModel: MapViewModel
     @State private var mapCameraPosition = MapCameraPosition.automatic
     @State private var hasLocationPermission = false
     
@@ -23,16 +23,16 @@ struct MapView: View {
                 // they should make the text that tells the user what to do to enable permission
                 // make an alert to take them to settings. (they can reference contacts view for the instructions)
                 Button {
-                    privateDataManager.navigateToSettings()
+                    mapViewModel.navigateToSettings()
                 } label: {
                     Text("hey you need to enable blah blah blah")
                 }
             }
         }
         .onAppear {
-            privateDataManager.requestLocationPermission()
+            mapViewModel.requestLocationPermission()
         }
-        .onChange(of: privateDataManager.mapArea) { _ , mapLocation in
+        .onChange(of: mapViewModel.mapArea) { _ , mapLocation in
             if let mapLocation {
                 let cameraPosition = MapCameraPosition.rect(mapLocation)
                 mapCameraPosition = cameraPosition

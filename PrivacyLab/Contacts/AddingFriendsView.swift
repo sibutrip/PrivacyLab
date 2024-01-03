@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct AddingFriendsView: View {
-    @EnvironmentObject var privateDataManager: PrivateDataManager
+    @EnvironmentObject var contactsViewModel: ContactsViewModel
     @State var hasNoPermission = false
     @Environment(\.dismiss) var dismiss
     @Binding var friends: [Contact]
     var body: some View {
         NavigationStack {
             List {
-                ForEach(privateDataManager.contacts) { contact in
+                ForEach(contactsViewModel.contacts) { contact in
                     ContactDetailView(contact: contact, friends: $friends)
                 }
             }
@@ -26,7 +26,7 @@ struct AddingFriendsView: View {
             }
             .onAppear {
                 Task {
-                    if !privateDataManager.hasContactsPermission {
+                    if !contactsViewModel.hasContactsPermission {
                         hasNoPermission = true
                     }
                 }

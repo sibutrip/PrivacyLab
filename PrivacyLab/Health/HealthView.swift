@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct HealthView: View {
-    @EnvironmentObject var privateDataManager: PrivateDataManager
+    @EnvironmentObject var healthViewModel: HealthViewModel
     var body: some View {
-        Text("Hello, World!")
+        Button("Do thing") {
+            print(healthViewModel.stepsFromToday() ?? 0)
+        }
     }
 }
 

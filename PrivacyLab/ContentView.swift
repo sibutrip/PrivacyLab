@@ -20,7 +20,9 @@ import SwiftUI
 ///
 
 struct ContentView: View {
-    @StateObject var privateDataManager = PrivateDataManager()
+    @StateObject var contactsViewModel = ContactsViewModel()
+    @StateObject var mapViewModel = MapViewModel()
+    @StateObject var healthViewModel = HealthViewModel()
     var body: some View {
         TabView {
             ContactsView()
@@ -30,7 +32,9 @@ struct ContentView: View {
             HealthView()
                 .tabItem { Label("Health", systemImage: "cross") }
         }
-        .environmentObject(privateDataManager)
+        .environmentObject(contactsViewModel)
+        .environmentObject(mapViewModel)
+        .environmentObject(healthViewModel)
     }
 }
 
