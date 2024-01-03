@@ -44,6 +44,12 @@ struct MapView: View {
     }
 }
 
+extension MKMapRect: Equatable {
+    public static func == (lhs: MKMapRect, rhs: MKMapRect) -> Bool {
+        lhs.origin.coordinate.latitude == rhs.origin.coordinate.latitude && lhs.origin.coordinate.longitude == rhs.origin.coordinate.longitude
+    }
+}
+
 #Preview {
     MapView()
 }

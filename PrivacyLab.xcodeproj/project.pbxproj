@@ -75,11 +75,8 @@
 		7487065A2B2227220050D9A7 /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
-				748706502B2226840050D9A7 /* ContactsView.swift */,
-				740A50492B2A55FB00311DED /* AddingFriendsView.swift */,
-				74CE53C32B45CEB9001551B3 /* ContactsViewModel.swift */,
-				740A50472B2A52AB00311DED /* ContactDetailView.swift */,
-				7487065D2B2227F70050D9A7 /* Contact.swift */,
+				74CE53CB2B45D19D001551B3 /* Views */,
+				74CE53CC2B45D1B6001551B3 /* Models */,
 				7487065F2B22495E0050D9A7 /* ContactsService.swift */,
 			);
 			path = Contacts;
@@ -123,6 +120,25 @@
 				74A9BF662B1E2DEB00A24A53 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		74CE53CB2B45D19D001551B3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				748706502B2226840050D9A7 /* ContactsView.swift */,
+				740A50492B2A55FB00311DED /* AddingFriendsView.swift */,
+				740A50472B2A52AB00311DED /* ContactDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		74CE53CC2B45D1B6001551B3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7487065D2B2227F70050D9A7 /* Contact.swift */,
+				74CE53C32B45CEB9001551B3 /* ContactsViewModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
