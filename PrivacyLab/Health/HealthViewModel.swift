@@ -17,11 +17,11 @@ class HealthViewModel: ObservableObject {
     
     public func requestHealthPermission() {
         Task(priority: .userInitiated) {
-            try await healthStore.requestAuthorization(toShare: [], read: [HKSampleType.quantityType(forIdentifier: .stepCount)!])
+//            try await healthStore.requestAuthorization(toShare: [], read: [HKSampleType.quantityType(forIdentifier: .stepCount)!])
         }
     }
     
-    public func stepsFromToday() {
+    public func getStepsFromToday() {
         guard let stepType = HKSampleType.quantityType(forIdentifier: .stepCount) else { return }
         let predicate = HKQuery.predicateForSamples(withStart: .distantPast, end: .distantFuture, options: HKQueryOptions())
         
