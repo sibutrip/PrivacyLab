@@ -29,9 +29,6 @@ struct MapView: View {
                 }
             }
         }
-        .onAppear {
-            mapViewModel.requestLocationPermission()
-        }
         .onChange(of: mapViewModel.mapArea) { _ , mapLocation in
             if let mapLocation {
                 let cameraPosition = MapCameraPosition.rect(mapLocation)

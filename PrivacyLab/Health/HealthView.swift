@@ -11,7 +11,7 @@ struct HealthView: View {
     @EnvironmentObject var healthViewModel: HealthViewModel
     var body: some View {
         Button("Do thing") {
-            print(healthViewModel.stepsFromToday() ?? 0)
+//            print(healthViewModel.stepsFromToday() ?? 0)
         }
     }
 }

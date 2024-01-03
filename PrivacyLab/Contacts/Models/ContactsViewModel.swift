@@ -15,20 +15,18 @@ class ContactsViewModel: ObservableObject {
     
     private let contactService = ContactService()
     
-    func getContactsPermission() async throws {
-        self.hasContactsPermission = try await contactService.requestPermission()
-        self.contacts = try await contactService.loadContacts()
+    func requestContactsPermission() async {
+        do {
+            self.hasContactsPermission = try await contactService.requestPermission()
+            self.contacts = try await contactService.loadContacts()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
     func addContact(givenName: String, familyName: String) async throws {
         let addedContact = Contact(givenName: givenName, familyName: familyName)
         try await contactService.add(addedContact)
         contacts.append(addedContact)
-    }
-    
-    init() {
-        Task {
-            try await getContactsPermission()
-        }
     }
 }

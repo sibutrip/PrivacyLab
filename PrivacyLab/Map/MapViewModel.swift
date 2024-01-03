@@ -45,9 +45,4 @@ class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         }
         manager.stopUpdatingLocation()
     }
-    
-    override init() {
-        super.init()
-        requestLocationPermission()
-    }
 }

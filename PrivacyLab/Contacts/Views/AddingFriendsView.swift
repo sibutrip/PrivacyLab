@@ -24,18 +24,6 @@ struct AddingFriendsView: View {
                     dismiss()
                 }
             }
-            .onAppear {
-                Task {
-                    if !contactsViewModel.hasContactsPermission {
-                        hasNoPermission = true
-                    }
-                }
-            }
-        }
-        .alert("No Contacts Authorization Given", isPresented: $hasNoPermission) {
-            Button("OK") { dismiss() }
-        } message: {
-            Text("Go to settings to enable this permission")
         }
     }
 }

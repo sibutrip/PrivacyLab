@@ -16,7 +16,7 @@ class HealthViewModel: ObservableObject {
     @State var steps = 0.0
     
     
-    func getHealthPermission() {
+    func requestHealthPermission() {
         Task(priority: .userInitiated) {
             try await healthStore.requestAuthorization(toShare: [], read: [HKSampleType.quantityType(forIdentifier: .stepCount)!])
         }
@@ -42,10 +42,6 @@ class HealthViewModel: ObservableObject {
         }
         healthStore.execute(query)
         self.steps = stepCount
-    }
-    
-    init() {
-        getHealthPermission()
     }
     
     
