@@ -21,6 +21,7 @@
 		74CE53C42B45CEB9001551B3 /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CE53C32B45CEB9001551B3 /* ContactsViewModel.swift */; };
 		74CE53C62B45CEE8001551B3 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CE53C52B45CEE8001551B3 /* MapViewModel.swift */; };
 		74CE53CA2B45CF48001551B3 /* HealthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CE53C92B45CF48001551B3 /* HealthViewModel.swift */; };
+		74CE53CE2B45D226001551B3 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CE53CD2B45D226001551B3 /* SettingsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		74CE53C32B45CEB9001551B3 /* ContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
 		74CE53C52B45CEE8001551B3 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		74CE53C92B45CF48001551B3 /* HealthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthViewModel.swift; sourceTree = "<group>"; };
+		74CE53CD2B45D226001551B3 /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				748706612B224FB80050D9A7 /* Info.plist */,
 				74A9BF5F2B1E2DEA00A24A53 /* PrivacyLabApp.swift */,
 				74A9BF612B1E2DEA00A24A53 /* ContentView.swift */,
+				74CE53CD2B45D226001551B3 /* SettingsService.swift */,
 				7487065A2B2227220050D9A7 /* Contacts */,
 				748706562B2226F50050D9A7 /* Map */,
 				748706572B2226FC0050D9A7 /* Health */,
@@ -219,6 +222,7 @@
 				748706512B2226840050D9A7 /* ContactsView.swift in Sources */,
 				740A50482B2A52AB00311DED /* ContactDetailView.swift in Sources */,
 				74CE53C42B45CEB9001551B3 /* ContactsViewModel.swift in Sources */,
+				74CE53CE2B45D226001551B3 /* SettingsService.swift in Sources */,
 				748706602B22495E0050D9A7 /* ContactsService.swift in Sources */,
 				74CE53CA2B45CF48001551B3 /* HealthViewModel.swift in Sources */,
 				74A9BF602B1E2DEA00A24A53 /* PrivacyLabApp.swift in Sources */,

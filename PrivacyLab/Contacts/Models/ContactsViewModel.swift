@@ -32,9 +32,3 @@ class ContactsViewModel: ObservableObject {
         }
     }
 }
-
-extension ObservableObject {
-    public func navigateToSettings() {
-        UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
-    }
-}
