@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-#warning("Health Step 2: Go through the HealthKit documentation to find out how to access the user's step count")
-#warning("Health Step 2: Delay requesting permission to health data for as long as possible")
+#warning("Health Step 2: Delay requesting access the user's step count for as long as possible")
+#warning("Health Step 3: If the user does not give permission to access their step count, show  a button that takes the user to PrivacyLab's Settings page.")
+#warning("Health Step 4: If the user does not give permission to access their step count, show  a button that takes the user to PrivacyLab's Settings page.")
 
 
 struct HealthView: View {
