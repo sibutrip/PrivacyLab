@@ -27,7 +27,3 @@ struct AddingFriendsView: View {
         }
     }
 }
-
-#Preview {
-    AddingFriendsView(friends: .constant([]))
-}

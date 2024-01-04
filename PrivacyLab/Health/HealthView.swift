@@ -28,7 +28,3 @@ struct HealthView: View {
         }
     }
 }
-
-#Preview {
-    HealthView()
-}
