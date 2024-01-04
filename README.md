@@ -29,7 +29,7 @@ Each section has different instructions. Contacts walks you through all the step
 
 - Step 1: Delay requesting access to the user's location as long as possible. Where do we currently request permission to this resource? Where would be a better place to request that?
 - Step 2: As of now, if you deny permission of the app, the show the user the `mapCameraPosition` which is centered on the United States. Instead of this, let's show the `mapCameraPosition` only if the user has enabled location permissions (use the `hasLocationPermission` property of our `MapViewModel`); otherwise, show a button that takes the user to PrivacyLab's Settings page (hint: use the `navigateToSettings` method in `SettingsService`, look at how we use it `ContactsView` if you get stuck).
--Step 3: Change the `NSLocationWhenInUseUsageDescription` description in PrivacyLab's info.plist to be more descriptive.
+- Step 3: Change the `NSLocationWhenInUseUsageDescription` description in PrivacyLab's info.plist to be more descriptive.
 - Congratulations! You've completed all the steps. Delete the app, and run it again from Xcode. Take a moment to explore and see how the user experience has improved. For a more difficult task, move on to the `Health` section.
 
 ## `Health` (Gold Difficulty)
