@@ -39,7 +39,6 @@ struct ContactsView: View {
                                 addingNewFriendFromContacts = true
                             } else {
 #warning("Contacts Step 3: If the user has declined to give the user access to contacts, we need to tell the user why this action is not allowed. When this happens, let's toggle an alert that gives a helpful description to the user. This description should include 1) Why the action failed and 2) How to enable permissions to allow for this action. We aleady have an alert with a proper description, but we need to set `triedToImportContactsWithoutPermission` to `true` in order to display it. Go ahead and do that here in this `else` block.")
-                                triedToImportContactsWithoutPermission = true
                             }
                         }
                     }
@@ -64,7 +63,6 @@ struct ContactsView: View {
                     Button("No thanks") { }
                     Button("Take me there") {
 #warning("Contacts Step 4: If the user taps 'Take me there' we should actually open the Settings app to PrivacyLab's permission page. We can do that by calling the `navigateToSettings` method of the `SettingService` class. This method is marked as a `static` method, meaning we call this method on the SettingsService type, rather than an instance of SettingsService. You can do that by typing `SettingsService.navigateToSettings()`.")
-                        SettingsService.navigateToSettings()
                     }
                 }
             } message: {
