@@ -49,8 +49,8 @@ Each section has different instructions. Contacts walks you through all the step
 ## `Health` (Gold Difficulty)
 
 - **Step 1**: Go through the HealthKit documentation to find out how to request access the user's step count. You will also need to add this permission to the project's info.plist file.
-  > [!TIP]
-  > In Xcode, use ⌘ ⇧ 0 to open up the Swift Documentation. Search for HealthKit and look for ways to request authorization for reading health data.
+> [!TIP]
+> In Xcode, use ⌘ ⇧ 0 to open up the Swift Documentation. Search for HealthKit and look for ways to request authorization for reading health data.
 - **Step 2**: Delay requesting access the user's step count for as long as possible.
   
 - **Step 3**: If the user does not give permission to access their step count, show a button that takes the user to PrivacyLab's Settings page.
