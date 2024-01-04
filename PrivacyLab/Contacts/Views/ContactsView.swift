@@ -7,15 +7,6 @@
 
 import SwiftUI
 
-
-/// 1. if you dont give permissions, the app should still be usable
-/// make a popup that says "to view contacts enable permissions in settings" with the options "no thanks" and "take me there"
-///
-/// 2. make a toolbar button to add a contact using the ContactsManager method `addContact`
-///
-/// toolbar button should show an error saying why they cant create a contact if they havent given permission
-
-
 #warning("Contacts Step 5: As of now, the app gives no reason why it needs to access the user's contacts. Let's give a more descriptive reason so the user knows exactly how their personal data will be used. In the Navigator on the top left, click the blue project file labelled 'PrivacyLab' and click the 'Info' tab. Look for the key labelled 'Privacy - Contacts Usage Description' and give it a more useful value. For example 'PrivacyLab requires this permission in order to import your contacts names into your friend list.'")
 
 struct ContactsView: View {

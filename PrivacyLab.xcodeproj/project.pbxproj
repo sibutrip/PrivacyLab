@@ -58,14 +58,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		748706562B2226F50050D9A7 /* Map */ = {
+		748706562B2226F50050D9A7 /* Location */ = {
 			isa = PBXGroup;
 			children = (
 				7487064E2B2226790050D9A7 /* MapView.swift */,
 				74CE53C52B45CEE8001551B3 /* MapViewModel.swift */,
 				74CE53CF2B45DF14001551B3 /* MKMapRect+Equatable.swift */,
 			);
-			path = Map;
+			path = Location;
 			sourceTree = "<group>";
 		};
 		748706572B2226FC0050D9A7 /* Health */ = {
@@ -112,7 +112,7 @@
 				74A9BF612B1E2DEA00A24A53 /* ContentView.swift */,
 				74CE53CD2B45D226001551B3 /* SettingsService.swift */,
 				7487065A2B2227220050D9A7 /* Contacts */,
-				748706562B2226F50050D9A7 /* Map */,
+				748706562B2226F50050D9A7 /* Location */,
 				748706572B2226FC0050D9A7 /* Health */,
 				74A9BF632B1E2DEB00A24A53 /* Assets.xcassets */,
 				74A9BF652B1E2DEB00A24A53 /* Preview Content */,

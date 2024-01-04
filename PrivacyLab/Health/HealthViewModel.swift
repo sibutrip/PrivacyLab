@@ -17,7 +17,7 @@ class HealthViewModel: ObservableObject {
     
     public func requestHealthPermission() {
         Task(priority: .userInitiated) {
-#warning("Health Step 1: Go through the HealthKit documentation to find out how to request access the user's step count. You will also need to add this permission to the project's info.plist file")
+#warning("Health Step 1: Go through the HealthKit documentation to find out how to request access the user's step count. You will also need to add this permission to the project's info.plist file. Hint: In Xcode, use ⌘ ⇧ 0 to open up the Swift Documentation. Search for HealthKit and look for ways to request authorization for reading health data")
 //            try await healthStore.requestAuthorization(toShare: [], read: [HKSampleType.quantityType(forIdentifier: .stepCount)!])
         }
     }
