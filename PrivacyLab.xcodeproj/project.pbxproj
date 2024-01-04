@@ -34,7 +34,6 @@
 		748706522B22268B0050D9A7 /* HealthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthView.swift; sourceTree = "<group>"; };
 		7487065D2B2227F70050D9A7 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		7487065F2B22495E0050D9A7 /* ContactsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsService.swift; sourceTree = "<group>"; };
-		748706612B224FB80050D9A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		74A9BF5C2B1E2DEA00A24A53 /* PrivacyLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrivacyLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74A9BF5F2B1E2DEA00A24A53 /* PrivacyLabApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyLabApp.swift; sourceTree = "<group>"; };
 		74A9BF612B1E2DEA00A24A53 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -107,7 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				740A50462B2A4CAE00311DED /* PrivacyLab.entitlements */,
-				748706612B224FB80050D9A7 /* Info.plist */,
 				74A9BF5F2B1E2DEA00A24A53 /* PrivacyLabApp.swift */,
 				74A9BF612B1E2DEA00A24A53 /* ContentView.swift */,
 				74CE53CD2B45D226001551B3 /* SettingsService.swift */,
@@ -368,7 +366,7 @@
 				DEVELOPMENT_TEAM = 3UR85MK9RT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PrivacyLab/Info.plist;
+				INFOPLIST_FILE = "";
 				INFOPLIST_KEY_NSContactsUsageDescription = "\"\"";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "\"Idk we just need ur health data\"";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "\"\"";
@@ -403,7 +401,7 @@
 				DEVELOPMENT_TEAM = 3UR85MK9RT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PrivacyLab/Info.plist;
+				INFOPLIST_FILE = "";
 				INFOPLIST_KEY_NSContactsUsageDescription = "\"\"";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "\"Idk we just need ur health data\"";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "\"\"";
