@@ -38,4 +38,4 @@ Each section has different instructions. Contacts walks you through all the step
 - Step 2: Delay requesting access the user's step count for as long as possible.
 - Step 3: If the user does not give permission to access their step count, show  a button that takes the user to PrivacyLab's Settings page.
 - Step 4: If the user does not give permission to access their step count, show  a button that takes the user to PrivacyLab's Settings page.
-
+- Congratulations - you're a privacy wizard! Use that magical power for good by improving how you request permission in your own projects!
