@@ -16,4 +16,8 @@ class SettingsService {
     public static func navigateToSettings() {
         UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
     }
+
+    public static func navigateToHealthSettings() {
+        UIApplication.shared.open(URL(string: "x-apple-health://")!, options: [:], completionHandler: nil)
+    }
 }

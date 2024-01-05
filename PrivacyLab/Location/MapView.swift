@@ -17,12 +17,26 @@ struct MapView: View {
     @State private var mapCameraPosition = MapCameraPosition.automatic
     
     var body: some View {
-        Map(position: $mapCameraPosition)
-            .onChange(of: mapViewModel.mapArea) { _ , mapLocation in
-                if let mapLocation {
-                    let cameraPosition = MapCameraPosition.rect(mapLocation)
-                    mapCameraPosition = cameraPosition
+        ZStack {
+            if mapViewModel.hasLocationPermission {
+                Map(position: $mapCameraPosition)
+            } else {
+                Button {
+                    SettingsService.navigateToSettings()
+                } label: {
+                    Label("Enable Location Services", systemImage: "location")
                 }
+                .buttonStyle(.borderedProminent)
             }
+        }
+        .onChange(of: mapViewModel.mapArea) { _ , mapLocation in
+            if let mapLocation {
+                let cameraPosition = MapCameraPosition.rect(mapLocation)
+                mapCameraPosition = cameraPosition
+            }
+        }
+        .onAppear {
+            mapViewModel.requestLocationPermission()
+        }
     }
 }
