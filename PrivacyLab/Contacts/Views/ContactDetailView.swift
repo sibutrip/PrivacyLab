@@ -9,8 +9,10 @@ import SwiftUI
 
 struct ContactDetailView: View {
     let contact: Contact
+    
     @State private var isSelected: Bool
     @Binding var friends: [Contact]
+    
     var body: some View {
         HStack(spacing: 0) {
             Toggle("", isOn: $isSelected)
@@ -42,6 +44,6 @@ struct ContactDetailView: View {
 #Preview {
     List {
         ContactDetailView(contact: .init(givenName: "Cory", familyName: "Tripathy"), friends: .constant([]))
-        ContactDetailView(contact: .init(givenName: "Kevin", familyName: "Buchhholzz"), friends: .constant([]))
+        ContactDetailView(contact: .init(givenName: "Kevin", familyName: "Buchholz"), friends: .constant([]))
     }
 }

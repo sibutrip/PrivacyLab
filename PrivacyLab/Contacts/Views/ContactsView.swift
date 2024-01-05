@@ -11,23 +11,22 @@ import SwiftUI
 
 struct ContactsView: View {
     @EnvironmentObject var contactsViewModel: ContactsViewModel
+    
     @State private var friendName = ""
+    @State private var friends = [Contact]()
+    
     @State private var addingNewFriend = false
     @State private var addingNewFriendManually = false
     @State private var addingNewFriendFromContacts = false
     @State private var triedToImportContactsWithoutPermission = false
-    @State private var friends = [Contact]()
     
-    @State var errorText: String?
     var body: some View {
         NavigationStack {
-            Group {
-                List(friends) { contact in
-                    HStack(spacing: 0) {
-                        Text(contact.givenName)
-                        Text(" ")
-                        Text(contact.familyName)
-                    }
+            List(friends) { contact in
+                HStack(spacing: 0) {
+                    Text(contact.givenName)
+                    Text(" ")
+                    Text(contact.familyName)
                 }
             }
             .alert("Add new Friend", isPresented: $addingNewFriend) {
@@ -39,7 +38,6 @@ struct ContactsView: View {
                                 addingNewFriendFromContacts = true
                             } else {
 #warning("Contacts Step 3: If the user has declined to give the user access to contacts, we need to tell the user why this action is not allowed. When this happens, let's toggle an alert that gives a helpful description to the user. This description should include 1) Why the action failed and 2) How to enable permissions to allow for this action. We aleady have an alert with a proper description, but we need to set `triedToImportContactsWithoutPermission` to `true` in order to display it. Go ahead and do that here in this `else` block.")
-                                triedToImportContactsWithoutPermission = true
                             }
                         }
                     }
@@ -64,7 +62,6 @@ struct ContactsView: View {
                     Button("No thanks") { }
                     Button("Take me there") {
 #warning("Contacts Step 4: If the user taps 'Take me there' we should actually open the Settings app to PrivacyLab's permission page. We can do that by calling the `navigateToSettings` method of the `SettingService` class. This method is marked as a `static` method, meaning we call this method on the SettingsService type, rather than an instance of SettingsService. You can do that by typing `SettingsService.navigateToSettings()`.")
-                        SettingsService.navigateToSettings()
                     }
                 }
             } message: {
@@ -83,6 +80,7 @@ struct ContactsView: View {
             }
         }
     }
+    
     func addFriend() {
         friends.append(Contact(givenName: friendName, familyName: ""))
     }
