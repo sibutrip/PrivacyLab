@@ -10,10 +10,13 @@ import SwiftUI
 #warning("Health Step 2: Delay requesting access the user's step count for as long as possible")
 #warning("Health Step 3: If the user does not give permission to access their step count, show  a button that takes the user to the Health app to enable these permissions.")
 #warning("Health Step 4: Find the necessary usage description key-value pair to add to the the app's info.plist in order to access Health information")
-
+#warning("Heath Bonus: If you deny permission initially, enable it in Health, and switch back to the app, the step count doesn't refresh. Why is that? To to make the app automatically refresh the step count when you switch back to it.")
 struct HealthView: View {
     @EnvironmentObject var healthViewModel: HealthViewModel
+    @Environment(\.scenePhase) var scenePhase
+    
     @State private var isShowingStepCount = false
+    @State private var hasOpenedHealthSettings = false
     
     var body: some View {
         ZStack {
@@ -28,6 +31,7 @@ struct HealthView: View {
                     Text("No steps found for today")
                     Button {
                         SettingsService.navigateToHealthSettings()
+                        hasOpenedHealthSettings = true
                     } label: {
                         VStack {
                             Label("Enable Fitness Permissions", systemImage: "figure.walk")
@@ -45,6 +49,11 @@ struct HealthView: View {
         .task {
             await healthViewModel.requestHealthPermission()
             healthViewModel.getStepsFromToday()
+        }
+        .onChange(of: scenePhase) { _ , newValue in
+            if newValue == .active && hasOpenedHealthSettings {
+                healthViewModel.getStepsFromToday()
+            }
         }
     }
 }
