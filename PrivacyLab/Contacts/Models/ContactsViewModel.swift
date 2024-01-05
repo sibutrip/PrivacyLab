@@ -23,10 +23,4 @@ class ContactsViewModel: ObservableObject {
             print(error.localizedDescription)
         }
     }
-    
-    public func addContact(givenName: String, familyName: String) async throws {
-        let addedContact = Contact(givenName: givenName, familyName: familyName)
-        try await contactService.add(addedContact)
-        contacts.append(addedContact)
-    }
 }

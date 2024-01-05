@@ -23,6 +23,4 @@ actor ContactService {
         }
         return contacts.map { Contact(givenName: $0.givenName, familyName: $0.familyName) }
     }
-    
-    public func add(_ contact: Contact) async throws { }
 }
