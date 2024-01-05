@@ -11,6 +11,7 @@ struct ContentView: View {
     @StateObject var contactsViewModel = ContactsViewModel()
     @StateObject var mapViewModel = MapViewModel()
     @StateObject var healthViewModel = HealthViewModel()
+    
     var body: some View {
         TabView {
             ContactsView()

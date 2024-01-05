@@ -9,9 +9,9 @@ import SwiftUI
 
 struct AddingFriendsView: View {
     @EnvironmentObject var contactsViewModel: ContactsViewModel
-    @State var hasNoPermission = false
-    @Environment(\.dismiss) var dismiss
+    @Environment(\.dismiss) private var dismiss
     @Binding var friends: [Contact]
+    
     var body: some View {
         NavigationStack {
             List {

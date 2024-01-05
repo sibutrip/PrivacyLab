@@ -10,8 +10,9 @@ import CoreLocation
 import MapKit
 
 @MainActor
-class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
+class MapViewModel: NSObject, ObservableObject {
     private let locationManager = CLLocationManager()
+    
     @Published var location: CLLocation?
     @Published var mapArea: MKMapRect?
     public var hasLocationPermission: Bool {
@@ -22,18 +23,15 @@ class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
     }
-    
+}
+
+extension MapViewModel: CLLocationManagerDelegate {
     nonisolated func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         switch manager.authorizationStatus {
-            
-        case .notDetermined:
-            return
-        case .restricted:
-            return
-        case .denied:
-            return
         case .authorizedAlways, .authorizedWhenInUse:
             manager.startUpdatingLocation()
+        case .notDetermined, .restricted, .denied:
+            return
         @unknown default:
             return
         }

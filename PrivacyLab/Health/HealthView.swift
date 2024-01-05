@@ -15,6 +15,7 @@ import SwiftUI
 struct HealthView: View {
     @EnvironmentObject var healthViewModel: HealthViewModel
     @State private var isShowingStepCount = false
+    
     var body: some View {
         Button("View my step count") {
             isShowingStepCount = true

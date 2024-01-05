@@ -11,17 +11,17 @@ import SwiftUI
 
 struct ContactsView: View {
     @EnvironmentObject var contactsViewModel: ContactsViewModel
+    
     @State private var friendName = ""
+    @State private var friends = [Contact]()
+
     @State private var addingNewFriend = false
     @State private var addingNewFriendManually = false
     @State private var addingNewFriendFromContacts = false
     @State private var triedToImportContactsWithoutPermission = false
-    @State private var friends = [Contact]()
-    
-    @State var errorText: String?
+
     var body: some View {
         NavigationStack {
-            Group {
                 List(friends) { contact in
                     HStack(spacing: 0) {
                         Text(contact.givenName)
@@ -29,7 +29,6 @@ struct ContactsView: View {
                         Text(contact.familyName)
                     }
                 }
-            }
             .alert("Add new Friend", isPresented: $addingNewFriend) {
                 VStack {
                     Button("Import From Contacts") {
@@ -81,6 +80,7 @@ struct ContactsView: View {
             }
         }
     }
+    
     func addFriend() {
         friends.append(Contact(givenName: friendName, familyName: ""))
     }
