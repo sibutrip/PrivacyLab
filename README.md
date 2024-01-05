@@ -48,6 +48,8 @@ Each section has different instructions. Contacts walks you through all the step
 
 ## `Health` (Gold Difficulty)
 
+- **Setup**: Before you start, you'll need to manually add steps to the simulator's Health app. Open Health and tap Steps > Add Data. Add any number of steps to today's step count.
+
 - **Step 1**: Go through the HealthKit documentation to find out how to request access the user's step count. You will also need to add this permission to the project's info.plist file.
 > [!TIP]
 > In Xcode, use ⌘ ⇧ 0 to open up the Swift Documentation. Search for HealthKit and look for ways to request authorization for reading health data.
@@ -56,5 +58,7 @@ Each section has different instructions. Contacts walks you through all the step
 - **Step 3**: If the user does not give permission to access their step count, show a button that takes the user to PrivacyLab's Settings page.
   
 - **Step 4**: Find the necessary usage description key-value pair to add to the the app's info.plist in order to access Health information.
+
+- **Bonus**: If you deny permission initially, enable it in Health, and switch back to the app, the step count doesn't refresh. Why is that? To to make the app automatically refresh the step count when you switch back to it.
   
 - Congratulations - you're a privacy wizard! Use that magical power for good by improving how you request permission in your own projects!
